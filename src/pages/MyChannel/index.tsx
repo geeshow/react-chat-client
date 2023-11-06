@@ -19,7 +19,7 @@ const MyChannel = () => {
         if (channelId && channelId !== '') {
             WSMyChannelView(channelId);
         }
-    }, [channelId]);
+    }, [channelId, WSMyChannelView]);
 
     return (
         <div className={'common-page h-full'}>

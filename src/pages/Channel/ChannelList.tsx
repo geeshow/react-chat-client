@@ -15,7 +15,7 @@ const ChannelList = () => {
     useEffect(() => {
         WSChannelList();
         console.log('ChannelList')
-    }, []);
+    }, [WSChannelList]);
 
     const selectChannel = (channelId: string) => {
         navigate(`/channels/${channelId}`);

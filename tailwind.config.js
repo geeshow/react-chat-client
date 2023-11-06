@@ -1,6 +1,6 @@
 module.exports = {
-  purge: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'], // This is the only line we need to change
-  darkMode: false, // or 'media' or 'class'
+  content: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'], // This is the only line we need to change
+  darkMode: 'media', // or 'media' or 'class'
   theme: {
     extend: {
       maxHeight: {

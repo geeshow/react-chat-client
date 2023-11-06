@@ -1,4 +1,4 @@
-import React, {useContext, useEffect, useMemo} from 'react';
+import React, {useCallback, useContext, useEffect, useMemo} from 'react';
 import WebSocketContext from "../../websocket/WebSocketProvider";
 import {useRecoilValue} from "recoil";
 import {myChannelListState} from "../../store/recoilState";
@@ -13,11 +13,11 @@ const MyChannelList = () => {
     const { WSMyChannelList } = useContext(WebSocketContext) as WebSocketContextType;
     useEffect(() => {
         WSMyChannelList();
-    }, []);
+    }, [WSMyChannelList]);
 
-    const selectChannel = (channelId: string) => {
+    const selectChannel = useCallback((channelId: string) => {
         navigate(`/my-channels/${channelId}`);
-    }
+    }, [ navigate ]);
 
     const renderChannelList = useMemo(() => {
         console.log('renderChannelList')
@@ -26,7 +26,7 @@ const MyChannelList = () => {
                 <ChannelCard key={channel.id} channel={channel} view={(channelId: string) => selectChannel(channelId)}/>
             )
         });
-    }, [myChannelList]);
+    }, [myChannelList, selectChannel]);
 
     return (
         <section className={'common-section'}>

@@ -21,7 +21,7 @@ const ChannelView:React.FC<ChannelViewProps> = ({ channelId }) => {
         if (channelId !== '') {
             WSChannelView(channelId);
         }
-    }, [channelId]);
+    }, [channelId, WSChannelView]);
 
     const joinChannel = () => {
         console.log('channelId', channelId);
@@ -39,7 +39,7 @@ const ChannelView:React.FC<ChannelViewProps> = ({ channelId }) => {
         if (isJoinChannel && doEnterChannel) {
             navigate(`/my-channels/${channelId}`);
         }
-    }, [isJoinChannel, doEnterChannel]);
+    }, [isJoinChannel, doEnterChannel, navigate, channelId]);
 
     const userList = () => {
         if (currentChannel.userList) {

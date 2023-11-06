@@ -145,7 +145,7 @@ export const WebSocketProvider = ({ host, children }: any) => {
         else if (receivedData.type === "error") {
             alert(receivedData.payload.message);
         }
-    }, [messages]);
+    }, [messages, sendMessage, setUser, setToken, setChannelList, setCurrentChannel, setMyChannelList, user, currentEnterChannel, setCurrentEnterChannel, setLastMessage]);
 
     const request = WebSocketRequest(sendMessage);
 

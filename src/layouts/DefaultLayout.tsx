@@ -13,7 +13,7 @@ function DefaultLayout(parent: { children: ReactNode }) {
         if (!isLogin && location.pathname !== '/') {
             navigate('/');
         }
-    }, []);
+    }, [isLogin, location.pathname, navigate]);
 
     return (
         <div className='app h-screen'>

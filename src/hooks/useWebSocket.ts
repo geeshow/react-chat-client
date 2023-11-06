@@ -41,7 +41,7 @@ const useWebSocket = (url: string) => {
                 ws.close();
             }
         };
-    }, [url]);
+    }, [url, token]);
 
     const sendMessage = useCallback((requestDto: {type: string, payload: any}) => {
         if (socket && socket.readyState === WebSocket.OPEN) {
@@ -59,7 +59,7 @@ const useWebSocket = (url: string) => {
                 });
             }
         }
-    }, [socket]);
+    }, [socket, requestWs, setRequestWsState]);
 
     return { messages, sendMessage };
 }

@@ -18,7 +18,7 @@ const MessageLine: React.FC<MessageLineProps> = ({ user, message, prevMessage}) 
             return prevMessage.userId === message.userId;
         }
         return false;
-    }, []);
+    }, [message, prevMessage]);
 
     const userInfo = () => {
         if (user) {
