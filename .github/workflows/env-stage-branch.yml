@@ -1,0 +1,19 @@
+name: STAGE Deploy NODE-CHAT-SERVER to Amazon ECR
+
+on:
+  push:
+    branches:
+      - stage
+
+jobs:
+  call-common-deploy-to-ecs:
+    uses: ./.github/workflows/common-deploy-for-frontend.yml
+    with:
+      ENVIRONMENT_NAME: node-chat-stage
+      SOURCE_DIST: build
+    secrets:
+      AWS_S3_BUCKET: ${{ secrets.REPO_AWS_S3_BUCKET }}
+      AWS_REGION: ${{ secrets.REPO_AWS_REGION }}
+      AWS_CLOUDFRONT_ID: ${{ secrets.REPO_AWS_CLOUDFRONT_ID }}
+      AWS_ACCESS_KEY_ID: ${{ secrets.REPO_AWS_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.REPO_AWS_SECRET_ACCESS_KEY }}
