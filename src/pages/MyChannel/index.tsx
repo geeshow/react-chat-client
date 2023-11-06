@@ -19,7 +19,8 @@ const MyChannel = () => {
         if (channelId && channelId !== '') {
             WSMyChannelView(channelId);
         }
-    }, [channelId, WSMyChannelView]);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [channelId]);
 
     return (
         <div className={'common-page h-full'}>

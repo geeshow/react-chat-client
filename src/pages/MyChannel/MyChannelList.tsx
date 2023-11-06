@@ -13,7 +13,8 @@ const MyChannelList = () => {
     const { WSMyChannelList } = useContext(WebSocketContext) as WebSocketContextType;
     useEffect(() => {
         WSMyChannelList();
-    }, [WSMyChannelList]);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
 
     const selectChannel = useCallback((channelId: string) => {
         navigate(`/my-channels/${channelId}`);

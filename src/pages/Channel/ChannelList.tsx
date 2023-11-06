@@ -15,7 +15,8 @@ const ChannelList = () => {
     useEffect(() => {
         WSChannelList();
         console.log('ChannelList')
-    }, [WSChannelList]);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
 
     const selectChannel = (channelId: string) => {
         navigate(`/channels/${channelId}`);

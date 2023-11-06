@@ -21,7 +21,8 @@ const ChannelView:React.FC<ChannelViewProps> = ({ channelId }) => {
         if (channelId !== '') {
             WSChannelView(channelId);
         }
-    }, [channelId, WSChannelView]);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [channelId]);
 
     const joinChannel = () => {
         console.log('channelId', channelId);
