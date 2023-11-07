@@ -6,7 +6,7 @@ interface UserSmallCardProps {
 }
 const UserSmallCard: React.FC<UserSmallCardProps> = ({ user , isHost}) => {
     return (
-        <div className="max-w-sm bg-white sm:flex sm:items-center">
+        <div className="max-w-sm mr-2 bg-white sm:flex sm:items-center">
             <span>
                 {user.emoji}
             </span>

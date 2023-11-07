@@ -21,12 +21,11 @@ const MyChannelList = () => {
     }, [ navigate ]);
 
     const renderChannelList = useMemo(() => {
-        console.log('renderChannelList')
         return myChannelList.map((channel) => {
             return (
                 <ChannelCard key={channel.id} channel={channel} view={(channelId: string) => selectChannel(channelId)}/>
             )
-        });
+        }).reverse();
     }, [myChannelList, selectChannel]);
 
     return (

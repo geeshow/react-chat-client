@@ -1,7 +1,11 @@
 import React, {useContext, useEffect, useState} from 'react';
 import WebSocketContext from "../../websocket/WebSocketProvider";
-import {useRecoilValue} from "recoil";
-import {currentChannelState, isJoinChannelState} from "../../store/recoilState";
+import {useRecoilState, useRecoilValue} from "recoil";
+import {
+    currentChannelState,
+    currentEnterChannelState,
+    isJoinChannelState
+} from "../../store/recoilState";
 import {useNavigate} from "react-router-dom";
 import {WebSocketContextType} from "../../websocket/WebSocketContextType";
 import UserSmallCard from "../../components/UserSmallCard";
@@ -15,6 +19,7 @@ const ChannelView:React.FC<ChannelViewProps> = ({ channelId }) => {
     const currentChannel = useRecoilValue(currentChannelState);
     const isJoinChannel = useRecoilValue(isJoinChannelState);
     const [doEnterChannel, ] = useState(false);
+    const [currentEnterChannel, ] = useRecoilState(currentEnterChannelState);
 
     useEffect(() => {
         console.log('channelId', channelId)
@@ -27,7 +32,6 @@ const ChannelView:React.FC<ChannelViewProps> = ({ channelId }) => {
     const joinChannel = () => {
         console.log('channelId', channelId);
         WSChannelJoin(channelId); // after response join channel, move to my channel view
-        navigate(`/my-channels/${channelId}`);
     }
 
     const enterChannel = () => {
@@ -41,6 +45,13 @@ const ChannelView:React.FC<ChannelViewProps> = ({ channelId }) => {
             navigate(`/my-channels/${channelId}`);
         }
     }, [isJoinChannel, doEnterChannel, navigate, channelId]);
+
+    useEffect(() => {
+        console.log('currentEnterChannel', currentEnterChannel)
+        if (currentEnterChannel.channel && currentEnterChannel.channel.id === channelId) {
+            navigate(`/my-channels/${channelId}`);
+        }
+    }, [currentEnterChannel, channelId, navigate]);
 
     const userList = () => {
         if (currentChannel.userList) {

@@ -81,26 +81,39 @@ export const WebSocketProvider = ({ host, children }: any) => {
         else if (receivedData.type === "ChannelCreate") {
             const response = receivedData.payload as ResponseCreateChannel;
             setChannelList((prevChannelList) => [...prevChannelList, response.channel]);
+
+            setCurrentEnterChannel((prevChannel) => {
+                return {
+                    channel: {
+                        ...response.channel
+                    },
+                    userList: [
+                        response.channel.host,
+                    ],
+                    messageList: [response.message]
+                };
+            });
+
         }
         else if (receivedData.type === "ChannelJoin") {
             const response = receivedData.payload as ResponseJoinChannel;
-            if (response.user.id === user.id || response.message.channelId === currentEnterChannel.channel.id) {
-                setCurrentEnterChannel((prevChannel) => {
-                    return {
-                        channel: {
-                            ...prevChannel.channel
-                        },
-                        userList: [
-                            ...prevChannel.userList,
-                            response.user
-                        ],
-                        messageList: [...prevChannel.messageList, response.message]
-                    };
-                });
-            }
 
+            // update user list current channel
             if (response.user.id === user.id) {
                 setMyChannelList((prevChannelList) => [...prevChannelList, response.channel]);
+
+                setCurrentEnterChannel((prevChannel) => {
+                    console.log('setCurrentEnterChannel', prevChannel)
+                    return {
+                        channel: {
+                            ...response.channel
+                        },
+                        userList: [
+                            ...response.userList,
+                        ],
+                        messageList: [response.message]
+                    };
+                });
             }
         }
         else if (receivedData.type === "ChannelLeave") {

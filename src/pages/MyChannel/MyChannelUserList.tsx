@@ -12,7 +12,6 @@ const MyChannelUserList:React.FC = () => {
     const [isEnterChannel, setEnterChannel] = useRecoilState(isEnterChannelState);
     const { WSChannelLeave } = useContext(WebSocketContext) as WebSocketContextType;
     const renderUserList = () => {
-        console.log('renderUserList', currentChannel.userList)
         if (currentChannel.userList) {
             return currentChannel.userList.map((user) => {
                 return (

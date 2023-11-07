@@ -21,12 +21,12 @@ const TopMenu: React.FC<TopMenuProps> = ({ currentPath }) => {
                     >My Info</button>
                 </li>
                 <li>
-                    <button className={`block px-3 py-2 rounded-md ${currentPath === "/channels" ? 'bg-sky-500 text-white' : 'bg-slate-50'}`}
+                    <button className={`block px-3 py-2 rounded-md ${currentPath.includes("/channels") ? 'bg-sky-500 text-white' : 'bg-slate-50'}`}
                             onClick={movePage('/channels')}
                     >Channels</button>
                 </li>
                 <li>
-                    <button className={`block px-3 py-2 rounded-md ${currentPath === "/my-channels" ? 'bg-sky-500 text-white' : 'bg-slate-50'}`}
+                    <button className={`block px-3 py-2 rounded-md ${currentPath.includes("/my-channels") ? 'bg-sky-500 text-white' : 'bg-slate-50'}`}
                             onClick={movePage('/my-channels')}
                     >My Channels</button>
                 </li>

@@ -1,15 +1,24 @@
 import React, {useContext, useEffect, useState} from 'react';
 import WebSocketContext from "../../websocket/WebSocketProvider";
 import {WebSocketContextType} from "../../websocket/WebSocketContextType";
+import {useRecoilState, useRecoilValue} from "recoil";
+import {currentEnterChannelState} from "../../store/recoilState";
+import {useNavigate} from "react-router-dom";
 
 const ChannelCreate = () => {
+    const navigate = useNavigate();
     const [channelName, setChannelName] = useState('');
     const { WSChannelCreate } = useContext(WebSocketContext) as WebSocketContextType;
+    const currentEnterChannel = useRecoilValue(currentEnterChannelState);
 
     useEffect(() => {
-        // ChannelList();
-        console.log('ChannelCreate')
-    }, []);
+        console.log('currentEnterChannel', currentEnterChannel)
+        if (currentEnterChannel.channel.id && channelName === currentEnterChannel.channel.channelName) {
+            setChannelName('');
+            navigate(`/my-channels/${currentEnterChannel.channel.id}`);
+        }
+    }, [currentEnterChannel, navigate, channelName, setChannelName]);
+
     const requestCreateChannel = () => {
         if (channelName === '') {
             alert('Input channel name');

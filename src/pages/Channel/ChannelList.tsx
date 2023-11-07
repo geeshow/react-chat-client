@@ -2,7 +2,7 @@ import React, {useContext, useEffect} from 'react';
 import WebSocketContext from "../../websocket/WebSocketProvider";
 import {WebSocketContextType} from "../../websocket/WebSocketContextType";
 import {useRecoilValue} from "recoil";
-import {channelListState} from "../../store/recoilState";
+import {channelListState, myChannelListState} from "../../store/recoilState";
 import ChannelCard from "../../components/ChannelCard";
 import {useNavigate} from "react-router-dom";
 
@@ -27,7 +27,7 @@ const ChannelList = () => {
             return (
                 <ChannelCard key={channel.id} channel={channel} view={(channelId: string) => selectChannel(channelId)}/>
             )
-        });
+        }).reverse();
     }
     return (
         <section className={'common-section'}>
