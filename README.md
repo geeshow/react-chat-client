@@ -1,46 +1,57 @@
-# Getting Started with Create React App
+# Ken's Instant Chat Client
+Welcome to the frontend repository for Ken's Instant Chat Server - an interactive and real-time chat application built with React. This project leverages the powerful React library to provide a seamless multi-channel chat experience in the browser, enabling users to participate in lively conversations instantly.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The chat client is designed to be fast, responsive, and user-friendly, offering an engaging platform for users to connect with friends, collaborate with colleagues, or explore new connections.
 
-## Available Scripts
+## Backend Repository
+The backend for this chat client is a Node application that can be found at the following repository: [node-chat-server](https://github.com/geeshow/node-chat-server).
 
-In the project directory, you can run:
+## Features
+- **Real-Time Interactivity:** Engage in conversations with real-time updates and immediate message delivery.
+- **Modern UI:** A clean and modern user interface that is both intuitive and pleasing to use.
+- **Multi-Channel Support:** Access multiple chat channels for varied discussions and topics.
+- **Reactivity:** Built using React for reactive data updates and interactive user experiences.
 
-### `npm start`
+##  Dependencies
+- [React](https://reactjs.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Recoil](https://recoiljs.org/)
+- [Typescript](https://www.typescriptlang.org/)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Live Version
+The chat server is currently live and can be accessed at https://chat.devken.kr/.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Local Development
+To run the chat client locally and connect to the chat server, follow these steps:
 
-### `npm test`
+### Prerequisites
+Ensure you have node and npm/yarn installed on your local machine. This project was bootstrapped with Create React App.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Installation
+Clone the repository and install the dependencies:
 
-### `npm run build`
+```bash
+$ git clone https://github.com/geeshow/react-chat-client.git
+$ cd react-chat-client
+$ yarn install
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Running Locally
+Start the development server:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+$ yarn start
+```
+This will run the app in the development mode. Open http://localhost:3000 to view it in the browser.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Contributing
+Contributions make the open-source community a fantastic place to learn, inspire, and create. Any contributions you make are greatly appreciated.
 
-### `npm run eject`
+If you have a suggestion that would make this better, please fork the repository and create a pull request. You can also simply open an issue with the tag "enhancement".
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Don't forget to give the project a star! Thanks again!
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## License
+This project is licensed under the MIT License - see the LICENSE file for details.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Happy chatting!
