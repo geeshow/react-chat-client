@@ -16,16 +16,21 @@ const ChangeUserForm = () => {
     }
 
     return (
-        <section className={'common-section'}>
-            <input className={'common-input my-2'} type="text" placeholder="id" onChange={(event) => {
-                setId(event.target.value);
-            }} />
-            <input className={'common-input my-2'} type="password" placeholder="password"  onChange={(event) => {
-                setPassword(event.target.value);
-            }} />
-            <div className={'flex justify-between mt-2'}>
-                <button className={'common-btn px-12'} type="submit" onClick={requestSignupUser}>Signup</button>
-                <button className={'common-btn px-12'} type="submit" onClick={requestLoginUser}>Login</button>
+        <section className={'rounded-t-2xl rounded-b-3xl bg-gray-200 pt-3'}>
+            <div className={'mt-3 text-gray-500 px-3'}>
+                This is my personal project. I don't use your email for any other purpose. Also, your account can be removed at any time.
+            </div>
+            <div className={'mt-3 px-2'}>
+                <input className={'common-input my-2'} type="text" placeholder="email" onChange={(event) => {
+                    setId(event.target.value);
+                }} />
+                <input className={'common-input my-2'} type="password" placeholder="password"  onChange={(event) => {
+                    setPassword(event.target.value);
+                }} />
+            </div>
+            <div className={'flex justify-between mt-2 text-white text-center'}>
+                <div className={'grow bg-indigo-700 hover:bg-indigo-600 cursor-pointer p-3 rounded-bl-2xl'} onClick={requestSignupUser}>Signup</div>
+                <div className={'grow bg-indigo-700 hover:bg-indigo-600 cursor-pointer p-3 rounded-br-2xl'} onClick={requestLoginUser}>Login</div>
             </div>
         </section>
     );

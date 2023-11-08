@@ -8,7 +8,7 @@
   @apply bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 rounded;
 }
 .common-page {
-    @apply bg-gray-200 p-2 mb-4 flex flex-col justify-center items-center min-h-fit;
+    @apply p-2 mb-4 flex flex-col justify-center items-center min-h-fit;
 }
 .common-section {
     @apply bg-white shadow-md rounded p-4 max-w-sm;

@@ -16,12 +16,12 @@ function DefaultLayout(parent: { children: ReactNode }) {
     }, [isLogin, location.pathname, navigate]);
 
     return (
-        <div className='app h-screen'>
-            <div className='app-top h-14'>
-                <TopMenu currentPath={location.pathname} />
-            </div>
-            <div className='app-content h-5/6'>
+        <div className='flex flex-col justify-between h-screen bg-[#1C1B24]'>
+            <div className='h-full'>
                 {parent.children}
+            </div>
+            <div>
+                <TopMenu currentPath={location.pathname} />
             </div>
         </div>
     );

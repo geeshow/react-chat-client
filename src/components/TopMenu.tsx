@@ -13,22 +13,31 @@ const TopMenu: React.FC<TopMenuProps> = ({ currentPath }) => {
     }
 
     return (
-        <nav className="py-4 px-6 text-sm font-medium">
-            <ul className="flex space-x-3">
-                <li>
-                    <button className={`block px-3 py-2 rounded-md ${currentPath === "/" ? 'bg-sky-500 text-white' : 'bg-slate-50'}`}
-                            onClick={movePage('/')}
-                    >My Info</button>
+        <nav className="w-full border-gray-400">
+            <ul className="flex w-full border-gray-400">
+                <li className={`material-symbols-outlined 
+                        grow text-center text-white text-4xl block px-3 py-2 rounded-md ${currentPath === "/" ? 'bg-indigo-900' : 'bg-[#1C1B24]'}
+                        cursor-pointer rounded 
+                        `}
+                    onClick={movePage('/')}
+                >
+                    <div className={'hover:rounded hover:bg-white/[0.04]'}>person</div>
                 </li>
-                <li>
-                    <button className={`block px-3 py-2 rounded-md ${currentPath.includes("/channels") ? 'bg-sky-500 text-white' : 'bg-slate-50'}`}
-                            onClick={movePage('/channels')}
-                    >Channels</button>
+                <li className={`material-symbols-outlined 
+                        grow text-center text-white text-4xl block px-3 py-2 rounded-md ${currentPath.includes("/channels") ? 'bg-indigo-900' : 'bg-[#1C1B24]'}
+                        cursor-pointer rounded 
+                        `}
+                    onClick={movePage('/channels')}
+                >
+                    <div className={'hover:rounded hover:bg-white/[0.04]'}>interests</div>
                 </li>
-                <li>
-                    <button className={`block px-3 py-2 rounded-md ${currentPath.includes("/my-channels") ? 'bg-sky-500 text-white' : 'bg-slate-50'}`}
-                            onClick={movePage('/my-channels')}
-                    >My Channels</button>
+                <li className={`material-symbols-outlined 
+                        grow text-center text-white text-4xl block px-3 py-2 rounded-md ${currentPath.includes("/my-channels") ? 'bg-indigo-900' : 'bg-[#1C1B24]'}
+                        cursor-pointer rounded 
+                        `}
+                    onClick={movePage('/my-channels')}
+                >
+                    <div className={'hover:rounded hover:bg-white/[0.04]'}>forum</div>
                 </li>
             </ul>
         </nav>
