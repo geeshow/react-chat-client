@@ -20,8 +20,8 @@ const MyInfo = () => {
                 <ul className={'text-gray-300 text-left w-full mt-3'}>
                     <li>Author: Ken</li>
                     <li>Repository</li>
-                    <li>- <a href={'https://github.com/geeshow/react-chat-client'} target='_blank' className={'underline'}>https://github.com/geeshow/react-chat-client</a></li>
-                    <li>- <a href={'https://github.com/geeshow/node-chat-server'} target='_blank' className={'underline'}>https://github.com/geeshow/node-chat-server</a></li>
+                    <li>- <a href={'https://github.com/geeshow/react-chat-client'} target='_blank' rel='noreferrer' className={'underline'}>https://github.com/geeshow/react-chat-client</a></li>
+                    <li>- <a href={'https://github.com/geeshow/node-chat-server'} target='_blank' rel='noreferrer' className={'underline'}>https://github.com/geeshow/node-chat-server</a></li>
                 </ul>
             </div>
         </div>
