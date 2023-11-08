@@ -2,7 +2,7 @@ import React, {useContext, useEffect} from 'react';
 import WebSocketContext from "../../websocket/WebSocketProvider";
 import {WebSocketContextType} from "../../websocket/WebSocketContextType";
 import {useRecoilValue} from "recoil";
-import {channelListState, myChannelListState} from "../../store/recoilState";
+import {channelListState} from "../../store/recoilState";
 import ChannelCard from "../../components/ChannelCard";
 import {useNavigate} from "react-router-dom";
 
